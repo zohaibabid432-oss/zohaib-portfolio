@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zohaib Abid | SEO Expert & Reverse Job Recruiter in Bahawalpur, Pakistan</title>
-<meta name="description" content="Zohaib Abid is an SEO Expert in Bahawalpur, Pakistan with 2+ years improving search rankings through technical SEO, on-page optimization, and keyword research. Also offers reverse job recruiting.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<title>Zohaib Abid | SEO Expert in Bahawalpur, Pakistan</title>
+<meta name="description" content="Zohaib Abid is an SEO Expert in Bahawalpur, Pakistan with hands-on experience improving search rankings through technical SEO, on-page optimization, keyword research, and backlink building.">
 <link rel="canonical" href="https://zohaibabid432-oss.github.io/zohaib-portfolio/">
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zohaibabid432-oss.github.io/zohaib-portfolio/">
-<meta property="og:title" content="Zohaib Abid | SEO Expert & Reverse Job Recruiter">
+<meta property="og:title" content="Zohaib Abid | SEO Expert">
 <meta property="og:description" content="Technical SEO, on-page & off-page optimization, and keyword research that drive measurable growth in search visibility and organic revenue.">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zohaib Abid | SEO Expert & Reverse Job Recruiter">
+<meta name="twitter:title" content="Zohaib Abid | SEO Expert">
 <meta name="twitter:description" content="Technical SEO, on-page & off-page optimization, and keyword research that drive measurable growth in search visibility and organic revenue.">
 
 <!-- Structured data for search engines -->
@@ -113,8 +117,26 @@
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--hairline);
   }
-  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;display:flex;align-items:center;gap:9px;}
   .logo span{color:var(--signal);}
+  .logo-mark{
+    width:30px;height:30px;
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .3s ease, filter .3s ease;
+  }
+  .logo:hover .logo-mark{
+    transform:rotate(-6deg) scale(1.06);
+    filter:drop-shadow(0 0 10px rgba(34,211,238,0.6));
+  }
+  .logo-mark path{
+    stroke-dasharray:60;
+    stroke-dashoffset:60;
+    animation:logoDraw 1.6s ease-out forwards;
+  }
+  @keyframes logoDraw{
+    to{stroke-dashoffset:0;}
+  }
   .navlinks{display:flex;gap:28px;font-size:14px;font-weight:500;}
   .navlinks a{text-decoration:none;opacity:0.75;transition:opacity .2s;white-space:nowrap;}
   .navlinks a:hover{opacity:1;}
@@ -694,19 +716,285 @@
     *{animation:none !important; transition:none !important;}
     .reveal{opacity:1;transform:none;}
   }
+
+  /* ===== new animated elements (decorative only) ===== */
+
+  /* floating ambient particles across the page */
+  .bg-particles{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .bg-particles span{
+    position:absolute;
+    width:4px;height:4px;
+    border-radius:50%;
+    background:var(--signal);
+    opacity:0.35;
+    filter:drop-shadow(0 0 6px rgba(34,211,238,0.6));
+    animation:floatParticle linear infinite;
+  }
+  @keyframes floatParticle{
+    0%{transform:translateY(0) translateX(0);opacity:0;}
+    10%{opacity:0.5;}
+    90%{opacity:0.5;}
+    100%{transform:translateY(-1100px) translateX(40px);opacity:0;}
+  }
+  @media (max-width:640px){
+    .bg-particles{display:none;}
+  }
+
+  /* nav link animated underline */
+  .navlinks a{position:relative;}
+  .navlinks a::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0%;height:1.5px;
+    background:var(--signal);
+    transition:width .25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+
+  /* card hover lift + glow: pillars, exp-card, info-card */
+  .pillar{
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s ease;
+  }
+  .pillar:hover{
+    transform:translateY(-6px);
+    border-top-color:var(--signal);
+  }
+  .exp-card, .info-card{
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease;
+  }
+  .exp-card:hover, .info-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--signal);
+    box-shadow:0 16px 40px rgba(0,0,0,0.35), 0 0 24px rgba(34,211,238,0.12);
+  }
+
+  /* stat cards subtle glow sweep on hover */
+  .stat{
+    position:relative;
+    overflow:hidden;
+    transition:background .3s ease;
+  }
+  .stat::before{
+    content:'';
+    position:absolute;
+    top:0;left:-60%;
+    width:40%;height:100%;
+    background:linear-gradient(120deg, transparent, rgba(34,211,238,0.08), transparent);
+    transform:skewX(-20deg);
+    transition:left .6s ease;
+  }
+  .stat:hover::before{left:120%;}
+
+  /* skill/tool chip hover pulse */
+  .kw-chip, .tool-chip{
+    transition:opacity .5s ease, transform .5s ease, box-shadow .25s ease;
+  }
+  .kw-chip:hover, .tool-chip:hover{
+    box-shadow:0 0 14px rgba(34,211,238,0.4);
+    transform:translateY(-2px) scale(1.04);
+  }
+
+  /* mouse-follow spotlight inside hero visual */
+  .hero-visual-wrap{
+    --mx:50%; --my:50%;
+  }
+  .hero-spotlight{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:radial-gradient(180px circle at var(--mx) var(--my), rgba(34,211,238,0.16), transparent 70%);
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .hero-visual-wrap:hover .hero-spotlight{opacity:1;}
+
+  /* scroll-to-top button */
+  .scroll-top{
+    position:fixed;
+    bottom:22px;left:22px;
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--card);
+    border:1px solid var(--hairline);
+    color:var(--signal);
+    font-size:18px;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    z-index:950;
+    opacity:0;
+    transform:translateY(12px) scale(0.9);
+    pointer-events:none;
+    transition:opacity .3s ease, transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .scroll-top.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto;
+  }
+  .scroll-top:hover{
+    border-color:var(--signal);
+    box-shadow:0 0 20px rgba(34,211,238,0.35);
+  }
+  .scroll-top svg{
+    animation:bounceArrow 1.8s ease-in-out infinite;
+  }
+  @keyframes bounceArrow{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-3px);}
+  }
+
+  /* button ripple effect */
+  .ripple-el{
+    position:relative;
+    overflow:hidden;
+  }
+  .ripple-circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(34,211,238,0.35);
+    transform:scale(0);
+    animation:rippleAnim .6s ease-out forwards;
+    pointer-events:none;
+  }
+  @keyframes rippleAnim{
+    to{transform:scale(1);opacity:0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .bg-particles span{animation:none !important; display:none;}
+    .pillar:hover, .exp-card:hover, .info-card:hover{transform:none;}
+    .scroll-top svg{animation:none;}
+  }
+
+  /* ===== custom colored cursor ===== */
+  @media (hover:hover) and (pointer:fine){
+    body{cursor:none;}
+    a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .li-tooltip-container, .scroll-top{
+      cursor:none;
+    }
+  }
+  .custom-cursor-dot,
+  .custom-cursor-ring{
+    position:fixed;
+    top:0;left:0;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:2000;
+    transform:translate(-50%,-50%);
+  }
+  .custom-cursor-dot{
+    width:6px;height:6px;
+    background:var(--signal);
+    box-shadow:0 0 10px rgba(34,211,238,0.9);
+  }
+  .custom-cursor-ring{
+    width:32px;height:32px;
+    border:1.5px solid var(--signal);
+    opacity:0.6;
+    transition:width .2s ease, height .2s ease, opacity .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .custom-cursor-ring.hovering{
+    width:52px;height:52px;
+    background:rgba(34,211,238,0.1);
+    opacity:1;
+  }
+  @media (max-width:900px), (hover:none){
+    .custom-cursor-dot, .custom-cursor-ring{display:none;}
+  }
+
+  /* ===== crawler bot riding the progress bar ===== */
+  #crawler-bot{
+    position:fixed;
+    top:0;left:0%;
+    width:16px;height:16px;
+    transform:translate(-50%,-6px);
+    z-index:1001;
+    pointer-events:none;
+    filter:drop-shadow(0 0 6px rgba(34,211,238,0.8));
+    transition:left 0.05s linear;
+  }
+
+  /* ===== floating SEO keyword particles ===== */
+  .bg-particles .kw-particle{
+    width:auto;height:auto;
+    border-radius:100px;
+    background:rgba(34,211,238,0.08);
+    border:1px solid rgba(34,211,238,0.25);
+    color:var(--signal);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    padding:4px 10px;
+    white-space:nowrap;
+    filter:none;
+  }
+
+  /* ===== indexing scan-line sweep on section eyebrows ===== */
+  .eyebrow{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+  }
+  .eyebrow::after{
+    content:'';
+    position:absolute;
+    top:0;left:-100%;
+    width:60%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(34,211,238,0.55), transparent);
+    animation:eyebrowScan 5s ease-in-out infinite;
+  }
+  @keyframes eyebrowScan{
+    0%{left:-60%;}
+    35%{left:120%;}
+    100%{left:120%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .custom-cursor-dot, .custom-cursor-ring, #crawler-bot{display:none;}
+    body{cursor:auto;}
+    .eyebrow::after{animation:none; display:none;}
+  }
 </style>
 </head>
 <body>
 
+<div class="custom-cursor-ring" id="cursorRing"></div>
+<div class="custom-cursor-dot" id="cursorDot"></div>
+
+<div class="bg-particles" id="bgParticles" aria-hidden="true"></div>
+
 <div id="progress"></div>
+<svg id="crawler-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--signal);">
+  <rect x="4" y="8" width="16" height="12" rx="2"/>
+  <circle cx="9" cy="14" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="15" cy="14" r="1.4" fill="currentColor" stroke="none"/>
+  <line x1="12" y1="8" x2="12" y2="4"/>
+  <circle cx="12" cy="3" r="1.2" fill="currentColor" stroke="none"/>
+</svg>
 <div id="rank-ticker"><span class="dot"></span><span id="rank-text">Position #47</span></div>
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
 
 <nav>
-  <div class="logo">zohaib<span>abid</span>.seo</div>
+  <div class="logo">
+    <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <rect width="64" height="64" rx="14" fill="var(--card)" stroke="var(--hairline)"/>
+      <path d="M14 42 L26 30 L36 38 L50 18" stroke="var(--signal)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="50" cy="18" r="4.5" fill="var(--card)" stroke="var(--signal)" stroke-width="3"/>
+    </svg>
+    zohaib<span>abid</span>.seo
+  </div>
   <div class="navlinks">
     <a href="#approach">Approach</a>
     <a href="#experience">Experience</a>
-    <a href="#recruiting">Recruiting</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -722,17 +1010,18 @@
       <div class="serp" id="serp">
         <span class="badge">Organic result</span><br>
         <span class="url">zohaibabid.seo</span>
-        <div class="title">Zohaib Abid | SEO Expert &amp; Reverse Job Recruiter</div>
+        <div class="title">Zohaib Abid | SEO Expert</div>
         <div class="desc">Technical SEO, on-page &amp; off-page optimization, and keyword research that drive measurable growth in search visibility and organic revenue.</div>
       </div>
 
       <h1>I get you to<br>position one.</h1>
-      <p class="sub">SEO Expert based in Bahawalpur, Pakistan, with 2 years of hands-on experience improving search rankings, organic traffic, and website performance through technical SEO, on-page optimization, and keyword research. Also works as a reverse job recruiter, sourcing and applying to the right roles on behalf of clients.</p>
+      <p class="sub">SEO Expert based in Bahawalpur, Pakistan, with hands-on experience improving search rankings, organic traffic, and website performance through technical SEO, on-page optimization, and keyword research.</p>
 
       <div class="scroll-cue"><div class="line"></div>Scroll to see the climb</div>
     </div>
-    <div class="hero-visual-wrap">
+    <div class="hero-visual-wrap" id="heroVisual">
       <div class="hero-visual-glow"></div>
+      <div class="hero-spotlight"></div>
       <svg class="hero-chart-svg" viewBox="0 0 440 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
@@ -825,40 +1114,13 @@
         <h3>SEO Expert <span style="color:var(--muted);font-weight:400;">at</span> <span class="role">E Bizz Solutions</span></h3>
         <div style="color:var(--muted);font-size:14px;margin-top:2px;">Bahawalpur, Pakistan</div>
       </div>
-      <div class="period">Feb 2024 - May 2025</div>
+      <div class="period">Feb 2024 - Present</div>
     </div>
     <ul class="exp-list">
       <li>Developed and executed comprehensive on-page, off-page, and technical SEO strategies that meaningfully increased organic search rankings and overall website visibility.</li>
       <li>Conducted deep keyword research and competitive analysis using SEMrush and Ahrefs to identify and capture high-intent commercial search terms across multiple client campaigns.</li>
       <li>Monitored website health, crawlability, and indexation using Google Search Console, proactively resolving technical issues to improve user experience and site performance.</li>
     </ul>
-  </div>
-</section>
-
-<section id="recruiting">
-  <div class="reveal">
-    <div class="eyebrow">Reverse Job Recruiting</div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
-      <h2 class="sec-title">Job hunting, run like a search campaign.</h2>
-      <div class="period">August 2025 - Present</div>
-    </div>
-    <p style="color:var(--muted);font-size:16px;max-width:560px;margin-top:14px;line-height:1.6;">
-      Instead of companies hiring a recruiter to find candidates, clients hire me to find them the job by sourcing open roles that match their goals and getting their application in front of the right people.
-    </p>
-  </div>
-  <div class="pillars reveal stagger">
-    <div class="pillar" style="--i:0">
-      <h3>Job sourcing</h3>
-      <p>Scanning company sites, job boards, and hidden-market openings to build a shortlist of roles that actually fit the client's background and goals.</p>
-    </div>
-    <div class="pillar" style="--i:1">
-      <h3>Application strategy</h3>
-      <p>Tailoring resumes, applications, and outreach for each opening so the client is applying to the right roles the right way, not spraying applications blind.</p>
-    </div>
-    <div class="pillar" style="--i:2">
-      <h3>Client coordination</h3>
-      <p>Keeping clients updated on new openings, deadlines, and next steps, so the search stays organized instead of scattered across tabs and emails.</p>
-    </div>
   </div>
 </section>
 
@@ -903,7 +1165,7 @@
             <div class="li-avatar">ZA</div>
             <div class="li-details">
               <div class="li-name">Zohaib Abid</div>
-              <div class="li-role">SEO Expert &amp; Reverse Job Recruiter</div>
+              <div class="li-role">SEO Expert</div>
             </div>
           </div>
           <div class="li-cta">→ View LinkedIn profile</div>
@@ -911,14 +1173,14 @@
       </div>
     </div>
     <div class="cta-search">
-      <a href="https://forms.gle/iYUdtmknYi6ixP987" target="_blank" rel="noopener" class="glow-btn" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14px;background:transparent;color:var(--signal);border:1.5px solid var(--signal);border-radius:100px;padding:14px 26px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s;text-decoration:none;display:inline-block;">Get a free audit</a>
+      <a href="https://forms.gle/iYUdtmknYi6ixP987" target="_blank" rel="noopener" class="glow-btn ripple-el" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14px;background:transparent;color:var(--signal);border:1.5px solid var(--signal);border-radius:100px;padding:14px 26px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s;text-decoration:none;display:inline-block;">Get a free audit</a>
     </div>
     <p style="font-size:13px;color:var(--muted);margin-top:10px;">Opens a short form. Takes under a minute.</p>
   </div>
 </section>
 
 <footer>
-  <span>Zohaib Abid | SEO Expert &amp; Reverse Job Recruiter</span>
+  <span>Zohaib Abid | SEO Expert</span>
   <span>zohaibabid432@gmail.com · Bahawalpur, Pakistan</span>
 </footer>
 
@@ -941,6 +1203,7 @@
 
   // --- scroll progress bar + rank ticker ---
   const progressBar = document.getElementById('progress');
+  const crawlerBot = document.getElementById('crawler-bot');
   const rankTicker = document.getElementById('rank-ticker');
   const rankText = document.getElementById('rank-text');
 
@@ -949,6 +1212,7 @@
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const pct = Math.min(scrollTop / docHeight, 1);
     progressBar.style.width = (pct * 100) + '%';
+    if(crawlerBot){ crawlerBot.style.left = (pct * 100) + '%'; }
 
     const rank = Math.max(1, Math.round(47 - pct * 46));
     rankText.textContent = 'Position #' + rank;
@@ -1018,6 +1282,116 @@
   }
   staggerIn('kwcloud');
   staggerIn('toolsrow');
+
+  // --- ambient floating background particles ---
+  const particleContainer = document.getElementById('bgParticles');
+  const seoTerms = ['#1 rank', 'SERP', 'CTR', 'backlinks', 'keywords', 'crawl budget', 'index', 'meta tags'];
+  if(particleContainer){
+    const count = 16;
+    for(let p = 0; p < count; p++){
+      const dot = document.createElement('span');
+      const left = Math.random() * 100;
+      const duration = 14 + Math.random() * 14;
+      const delay = Math.random() * 14;
+      const size = 2 + Math.random() * 3;
+      dot.style.left = left + 'vw';
+      dot.style.bottom = '-20px';
+      dot.style.width = size + 'px';
+      dot.style.height = size + 'px';
+      dot.style.animationDuration = duration + 's';
+      dot.style.animationDelay = delay + 's';
+      particleContainer.appendChild(dot);
+    }
+    const kwCount = 6;
+    for(let k = 0; k < kwCount; k++){
+      const tag = document.createElement('span');
+      tag.className = 'kw-particle';
+      tag.textContent = seoTerms[k % seoTerms.length];
+      const left = Math.random() * 90;
+      const duration = 20 + Math.random() * 16;
+      const delay = Math.random() * 18;
+      tag.style.left = left + 'vw';
+      tag.style.bottom = '-20px';
+      tag.style.animationDuration = duration + 's';
+      tag.style.animationDelay = delay + 's';
+      particleContainer.appendChild(tag);
+    }
+  }
+
+  // --- mouse-follow spotlight in hero visual ---
+  const heroVisual = document.getElementById('heroVisual');
+  if(heroVisual){
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width) * 100;
+      const my = ((e.clientY - rect.top) / rect.height) * 100;
+      heroVisual.style.setProperty('--mx', mx + '%');
+      heroVisual.style.setProperty('--my', my + '%');
+    });
+  }
+
+  // --- scroll-to-top button ---
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  function onScrollTopToggle(){
+    if(window.scrollY > 400){
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScrollTopToggle, {passive:true});
+  onScrollTopToggle();
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // --- ripple click effect on buttons ---
+  document.querySelectorAll('.ripple-el').forEach(el => {
+    el.addEventListener('click', function(e){
+      const rect = this.getBoundingClientRect();
+      const circle = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 1.6;
+      circle.className = 'ripple-circle';
+      circle.style.width = circle.style.height = size + 'px';
+      circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      this.appendChild(circle);
+      setTimeout(() => circle.remove(), 650);
+    });
+  });
+  // --- custom colored cursor ---
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+  if(cursorDot && cursorRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+    });
+    function animateRing(){
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    const hoverTargets = 'a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .li-tooltip-container, .scroll-top';
+    document.addEventListener('mouseover', (e) => {
+      if(e.target.closest(hoverTargets)){
+        cursorRing.classList.add('hovering');
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      if(e.target.closest(hoverTargets)){
+        cursorRing.classList.remove('hovering');
+      }
+    });
+  }
 </script>
 
 </body>
