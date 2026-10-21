@@ -77,14 +77,14 @@
   "jobTitle": "SEO Expert",
   "url": "https://zohaib-seo.vercel.app/",
   "email": "mailto:zohaibabid432@gmail.com",
-  "telephone": "+92-309-5183594",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bahawalpur",
     "addressCountry": "PK"
   },
   "sameAs": [
-    "https://www.linkedin.com/in/zohaib-abid-47260640b/"
+    "https://www.linkedin.com/in/zohaib-abid-47260640b/",
+    "https://www.upwork.com/freelancers/~0155b12c9dbec15635"
   ],
   "knowsAbout": [
     "Technical SEO",
@@ -408,14 +408,6 @@
     max-width:640px;
   }
   .search-mock svg{flex-shrink:0;opacity:0.4;}
-  #typed{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:15px;
-    color:var(--ink);
-    white-space:nowrap;
-    overflow:hidden;
-    border-right:2px solid var(--signal);
-  }
   .serp{
     max-width:640px;
     margin-top:14px;
@@ -747,6 +739,96 @@
     transition:background .2s, color .2s, box-shadow .2s;
   }
   .cta-search button:hover{background:var(--signal);color:var(--paper);box-shadow:0 0 24px rgba(34,211,238,0.35);}
+
+  /* upwork hire button */
+  .cta-search.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;max-width:none;}
+  .upwork-btn{
+    position:relative;overflow:hidden;
+    display:inline-flex;align-items:center;gap:14px;
+    padding:8px 22px 8px 8px;
+    background:linear-gradient(135deg,#1B2A22 0%,#16201B 100%);
+    border:1.5px solid #14A800;
+    border-radius:100px;
+    color:var(--ink);text-decoration:none;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .upwork-btn .uw-ico{
+    width:42px;height:42px;flex-shrink:0;border-radius:50%;
+    background:#14A800;display:flex;align-items:center;justify-content:center;
+    transition:transform .3s ease;
+  }
+  .upwork-btn .uw-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .upwork-btn .uw-text{display:flex;flex-direction:column;line-height:1.2;}
+  .upwork-btn .uw-top{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#7BD66B;}
+  .upwork-btn .uw-main{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;}
+  .upwork-btn .uw-arrow{margin-left:4px;font-size:18px;transition:transform .25s ease;}
+  .upwork-btn::after{
+    content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,0.14),transparent);
+    transform:skewX(-20deg);transition:left .6s ease;
+  }
+  .upwork-btn:hover{transform:translateY(-3px);border-color:#3FD02B;box-shadow:0 10px 28px rgba(20,168,0,0.28);}
+  .upwork-btn:hover::after{left:130%;}
+  .upwork-btn:hover .uw-ico{transform:rotate(-8deg) scale(1.06);}
+  .upwork-btn:hover .uw-arrow{transform:translateX(4px);}
+  .upwork-btn:focus-visible{outline:2px solid #3FD02B;outline-offset:3px;}
+
+  /* profile buttons row */
+  .profile-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:26px;}
+  .cta-search.cta-row{margin-top:18px;}
+  /* linkedin connect button */
+  .linkedin-btn{
+    position:relative;overflow:hidden;
+    display:inline-flex;align-items:center;gap:14px;
+    padding:8px 22px 8px 8px;
+    background:linear-gradient(135deg,#0A66C2 0%,#0B5AAE 100%);
+    border:1.5px solid #0A66C2;border-radius:14px;
+    color:#fff;text-decoration:none;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .linkedin-btn .ln-ico{
+    width:42px;height:42px;flex-shrink:0;border-radius:10px;
+    background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;
+    transition:transform .3s ease;
+  }
+  .linkedin-btn .ln-ico svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .linkedin-btn .ln-text{display:flex;flex-direction:column;line-height:1.2;}
+  .linkedin-btn .ln-top{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#BFDBF7;}
+  .linkedin-btn .ln-main{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;}
+  .linkedin-btn .ln-arrow{margin-left:4px;font-size:18px;transition:transform .25s ease;}
+  .linkedin-btn:hover{transform:translateY(-3px);background:linear-gradient(135deg,#1479DA 0%,#0A66C2 100%);box-shadow:0 10px 28px rgba(10,102,194,0.4);}
+  .linkedin-btn:hover .ln-ico{transform:rotate(8deg) scale(1.06);}
+  .linkedin-btn:hover .ln-arrow{transform:translateX(4px);}
+  .linkedin-btn:focus-visible{outline:2px solid #6CB4F5;outline-offset:3px;}
+
+  /* working site search */
+  .search-wrap{position:relative;max-width:640px;z-index:30;}
+  .search-mock{max-width:none;transition:border-color .2s, box-shadow .2s;}
+  .search-mock:focus-within{border-color:var(--signal);box-shadow:0 0 0 3px rgba(34,211,238,0.15);}
+  #site-search{
+    flex:1;min-width:0;background:transparent;border:0;outline:0;
+    font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--ink);
+    padding:0;-webkit-appearance:none;appearance:none;cursor:text;
+  }
+  #site-search::placeholder{color:var(--muted);opacity:1;}
+  #site-search::-webkit-search-cancel-button{-webkit-appearance:none;}
+  .search-results{
+    position:absolute;left:0;right:0;top:calc(100% + 8px);
+    background:var(--card);border:1px solid var(--hairline);border-radius:var(--radius);
+    box-shadow:0 16px 40px rgba(0,0,0,0.55);
+    max-height:340px;overflow-y:auto;padding:6px;
+    list-style:none;margin:0;
+  }
+  .search-results[hidden]{display:none;}
+  .search-results li{margin:0;}
+  .search-results a{
+    display:block;text-decoration:none;padding:10px 12px;border-radius:8px;
+  }
+  .search-results a:hover,.search-results a.active{background:var(--signal-dim);}
+  .search-results .sr-type{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);}
+  .search-results .sr-title{display:block;font-weight:600;font-size:15px;color:var(--ink);margin-top:2px;}
+  .search-results .sr-desc{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45;}
+  .search-results .sr-empty{padding:14px 12px;font-size:14px;color:var(--muted);}
   .glow-btn:hover{background:var(--signal) !important;color:var(--paper) !important;box-shadow:0 0 24px rgba(34,211,238,0.35);}
 
   footer{
@@ -923,7 +1005,7 @@
   /* ===== custom colored cursor ===== */
   @media (hover:hover) and (pointer:fine){
     body{cursor:none;}
-    a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .li-tooltip-container, .scroll-top{
+    a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .linkedin-btn, .upwork-btn, .scroll-top{
       cursor:none;
     }
   }
@@ -1036,7 +1118,7 @@
       <path d="M14 42 L26 30 L36 38 L50 18" stroke="var(--signal)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="50" cy="18" r="4.5" fill="var(--card)" stroke="var(--signal)" stroke-width="3"/>
     </svg>
-    <span class="logo-text">zohaib<span class="accent">abid</span>.seo</span>
+    <span class="logo-text">zohaib-<span class="accent">seo</span></span>
   </div>
   <div class="navlinks">
     <a href="#approach">Approach</a>
@@ -1052,13 +1134,16 @@
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <div class="search-mock">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span id="typed"></span>
+      <div class="search-wrap" role="search">
+        <div class="search-mock">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="site-search" type="search" placeholder="" autocomplete="off" spellcheck="false" aria-label="Search this portfolio" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+        </div>
+        <ul class="search-results" id="search-results" role="listbox" hidden></ul>
       </div>
       <div class="serp" id="serp">
         <span class="badge">Organic result</span><br>
-        <span class="url">zohaibabid.seo</span>
+        <span class="url">zohaib-seo.vercel.app</span>
         <div class="title">Zohaib Abid | SEO Expert</div>
         <div class="desc">Technical SEO, on-page &amp; off-page optimization, and keyword research that drive measurable growth in search visibility and organic revenue.</div>
       </div>
@@ -1227,26 +1312,22 @@
     <h2>Ready to stop guessing<br>where you rank?</h2>
     <div class="contact-list">
       <a href="mailto:zohaibabid432@gmail.com">✉ zohaibabid432@gmail.com</a>
-      <a href="tel:03095183594">☎ 0309-5183594</a>
       <span class="mono" style="font-size:15px;color:var(--muted);display:inline-flex;align-items:center;gap:10px;">📍 Bahawalpur, Pakistan</span>
 
-      <div class="li-tooltip-container">
-        <a class="li-icon" href="https://www.linkedin.com/in/zohaib-abid-47260640b/" target="_blank" rel="noopener" aria-label="Zohaib Abid on LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>
-        </a>
-        <a class="li-tooltip" href="https://www.linkedin.com/in/zohaib-abid-47260640b/" target="_blank" rel="noopener">
-          <div class="li-profile">
-            <div class="li-avatar">ZA</div>
-            <div class="li-details">
-              <div class="li-name">Zohaib Abid</div>
-              <div class="li-role">SEO Expert</div>
-            </div>
-          </div>
-          <div class="li-cta">→ View LinkedIn profile</div>
-        </a>
       </div>
+    <div class="profile-row">
+      <a href="https://www.linkedin.com/in/zohaib-abid-47260640b/" target="_blank" rel="noopener" class="linkedin-btn ripple-el" aria-label="Connect with Zohaib Abid on LinkedIn (opens in a new tab)">
+        <span class="ln-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+        <span class="ln-text"><span class="ln-top">LinkedIn</span><span class="ln-main">Connect with me</span></span>
+        <span class="ln-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="https://www.upwork.com/freelancers/~0155b12c9dbec15635?mp_source=share" target="_blank" rel="noopener" class="upwork-btn ripple-el" aria-label="Hire Zohaib Abid on Upwork (opens in a new tab)">
+        <span class="uw-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+        <span class="uw-text"><span class="uw-top">Available on Upwork</span><span class="uw-main">Hire me on Upwork</span></span>
+        <span class="uw-arrow" aria-hidden="true">&rarr;</span>
+      </a>
     </div>
-    <div class="cta-search">
+    <div class="cta-search cta-row">
       <a href="https://forms.gle/iYUdtmknYi6ixP987" target="_blank" rel="noopener" class="glow-btn ripple-el" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14px;background:transparent;color:var(--signal);border:1.5px solid var(--signal);border-radius:100px;padding:14px 26px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s;text-decoration:none;display:inline-block;">Get a free quick SEO review</a>
     </div>
     <p style="font-size:13px;color:var(--muted);margin-top:10px;">Quick review of your top SEO issues. Detailed audits and fixes are paid. Form takes under a minute.</p>
@@ -1259,17 +1340,118 @@
 </footer>
 
 <script>
-  // --- typing effect in hero search bar ---
-  const typedEl = document.getElementById('typed');
+  // --- working site search + typing placeholder ---
+  const searchInput = document.getElementById('site-search');
+  const resultsEl = document.getElementById('search-results');
+  const SITE_INDEX = [
+    {type:'Section', title:'Approach', url:'#approach', desc:'Audit, optimize, build authority: technical SEO, on-page optimization, off-page and backlinks.', kw:'technical seo on-page off-page authority crawlability indexation keyword research backlinks guest posting process method'},
+    {type:'Section', title:'Experience', url:'#experience', desc:'SEO Expert at E Bizz Solutions, Bahawalpur, Pakistan.', kw:'work job career e bizz solutions semrush ahrefs search console experience'},
+    {type:'Section', title:'Skills & tools', url:'#skills', desc:'Technical SEO, site audits, keyword research, backlink building. Google Search Console, Analytics, Ahrefs, SEMrush.', kw:'skills tools google search console analytics ahrefs semrush competitor analysis guest posting audits'},
+    {type:'Section', title:'FAQ', url:'#faq', desc:'Common questions about SEO work, the free quick review, tools and working remotely.', kw:'questions faq free review audit cost remote clients'},
+    {type:'Section', title:'Contact', url:'#contact', desc:'Email, location, free quick SEO review, LinkedIn and Upwork.', kw:'contact email hire reach get in touch free review bahawalpur pakistan'},
+    {type:'Page', title:'Services', url:'services.html', desc:'Technical SEO audit, on-page SEO, off-page and link building, local SEO.', kw:'services pricing hire technical audit on-page link building local seo google business profile'},
+    {type:'Page', title:'Blog', url:'blog.html', desc:'Practical SEO guides and checklists.', kw:'blog articles guides posts learn'},
+    {type:'Blog post', title:'Technical SEO Checklist for Small Business Websites', url:'blog-technical-seo-checklist.html', desc:'Indexing, robots.txt, canonicals, speed, mobile, structured data and internal links.', kw:'technical seo checklist indexing robots canonical speed core web vitals schema internal links'},
+    {type:'Blog post', title:'How to Set Up Google Search Console (Step by Step)', url:'blog-google-search-console-setup.html', desc:'Add your site, verify ownership, submit a sitemap and request indexing.', kw:'google search console setup verify sitemap indexing property url prefix'},
+    {type:'Blog post', title:'On-Page SEO Checklist for Small Business Websites', url:'blog-on-page-seo-checklist.html', desc:'Keywords, titles, meta descriptions, headings, content, images and internal links.', kw:'on-page seo checklist title meta description headings keywords content images alt'},
+    {type:'Blog post', title:'What Does an SEO Expert Do, and When Should You Hire One?', url:'blog-what-does-an-seo-expert-do.html', desc:'What SEO work involves and how to decide when to hire someone.', kw:'seo expert hire what does do freelancer consultant cost'},
+    {type:'Blog post', title:"What to Expect from a Free SEO Audit (and What It Won't Cover)", url:'blog-what-to-expect-from-a-free-seo-audit.html', desc:'What a free quick review includes and what is paid work.', kw:'free seo audit review expect cover paid quick'},
+    {type:'Profile', title:'Hire me on Upwork', url:'__UPWORK__', desc:'View my Upwork freelancer profile.', kw:'upwork freelancer hire profile gig job work', external:true},
+    {type:'Profile', title:'LinkedIn profile', url:'__LINKEDIN__', desc:'Connect with Zohaib Abid on LinkedIn.', kw:'linkedin connect network profile social', external:true}
+  ];
+  SITE_INDEX.forEach(e => {
+    if(e.url === '__UPWORK__') e.url = 'https://www.upwork.com/freelancers/~0155b12c9dbec15635?mp_source=share';
+    if(e.url === '__LINKEDIN__') e.url = 'https://www.linkedin.com/in/zohaib-abid-47260640b/';
+  });
+  const STOP = new Set(['in','the','a','an','of','and','for','to','how','what','is','do','i','my','you','me','on','at','with','can']);
+  let activeIdx = -1, currentResults = [];
+
+  function runSearch(q){
+    const terms = q.toLowerCase().split(/\s+/).filter(t => t.length > 1 && !STOP.has(t));
+    if(!terms.length) return [];
+    return SITE_INDEX.map(e => {
+      const title = e.title.toLowerCase(), desc = e.desc.toLowerCase(), kw = e.kw.toLowerCase(), type = e.type.toLowerCase();
+      let score = 0, matched = 0;
+      terms.forEach(t => {
+        let m = 0;
+        if(title.includes(t)) m += 5;
+        if(kw.includes(t)) m += 3;
+        if(desc.includes(t)) m += 1;
+        if(type.includes(t)) m += 1;
+        if(m){ matched++; score += m; }
+      });
+      return {e, score, matched};
+    }).filter(r => r.matched > 0)
+      .sort((a,b) => b.matched - a.matched || b.score - a.score)
+      .slice(0, 6).map(r => r.e);
+  }
+
+  function closeResults(){
+    resultsEl.hidden = true;
+    searchInput.setAttribute('aria-expanded','false');
+    activeIdx = -1;
+  }
+  function setActive(n){
+    const links = resultsEl.querySelectorAll('a');
+    links.forEach(l => l.classList.remove('active'));
+    if(!links.length){ activeIdx = -1; return; }
+    activeIdx = (n + links.length) % links.length;
+    links[activeIdx].classList.add('active');
+    links[activeIdx].scrollIntoView({block:'nearest'});
+  }
+  function renderResults(q){
+    resultsEl.textContent = '';
+    if(!q.trim()){ closeResults(); return; }
+    currentResults = runSearch(q);
+    if(!currentResults.length){
+      const li = document.createElement('li');
+      li.className = 'sr-empty';
+      li.textContent = 'No results for "' + q.trim() + '". Try "technical SEO", "services", "blog" or "contact".';
+      resultsEl.appendChild(li);
+    } else {
+      currentResults.forEach(e => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = e.url;
+        if(e.external){ a.target = '_blank'; a.rel = 'noopener'; }
+        const t = document.createElement('span'); t.className = 'sr-type'; t.textContent = e.type;
+        const ti = document.createElement('span'); ti.className = 'sr-title'; ti.textContent = e.title;
+        const d = document.createElement('span'); d.className = 'sr-desc'; d.textContent = e.desc;
+        a.append(t, ti, d);
+        a.addEventListener('click', closeResults);
+        li.appendChild(a);
+        resultsEl.appendChild(li);
+      });
+    }
+    resultsEl.hidden = false;
+    searchInput.setAttribute('aria-expanded','true');
+    setActive(currentResults.length ? 0 : -1);
+  }
+  searchInput.addEventListener('input', () => { userTyped = true; renderResults(searchInput.value); });
+  searchInput.addEventListener('focus', () => { userTyped = true; if(searchInput.value.trim()) renderResults(searchInput.value); });
+  searchInput.addEventListener('keydown', (ev) => {
+    if(ev.key === 'ArrowDown'){ ev.preventDefault(); if(resultsEl.hidden) renderResults(searchInput.value); else setActive(activeIdx + 1); }
+    else if(ev.key === 'ArrowUp'){ ev.preventDefault(); setActive(activeIdx - 1); }
+    else if(ev.key === 'Enter'){
+      const links = resultsEl.querySelectorAll('a');
+      if(links[activeIdx]){ ev.preventDefault(); links[activeIdx].click(); }
+    }
+    else if(ev.key === 'Escape'){ closeResults(); searchInput.blur(); }
+  });
+  document.addEventListener('click', (ev) => {
+    if(!ev.target.closest('.search-wrap')) closeResults();
+  });
+
+  let userTyped = false;
   const query = "seo expert in bahawalpur pakistan";
   let i = 0;
   function typeChar(){
+    if(userTyped) { document.getElementById('serp').classList.add('show'); return; }
     if(i <= query.length){
-      typedEl.textContent = query.slice(0, i);
+      searchInput.placeholder = query.slice(0, i);
       i++;
       setTimeout(typeChar, 42);
     } else {
-      typedEl.style.borderRight = 'none';
       document.getElementById('serp').classList.add('show');
     }
   }
@@ -1454,7 +1636,7 @@
     }
     animateRing();
 
-    const hoverTargets = 'a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .li-tooltip-container, .scroll-top';
+    const hoverTargets = 'a, button, .pillar, .exp-card, .info-card, .kw-chip, .tool-chip, .linkedin-btn, .upwork-btn, .scroll-top';
     document.addEventListener('mouseover', (e) => {
       if(e.target.closest(hoverTargets)){
         cursorRing.classList.add('hovering');
