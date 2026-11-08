@@ -87,9 +87,9 @@ body::after{content:"";position:fixed;inset:-10%;pointer-events:none;z-index:100
 nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:min(1200px,calc(100% - 40px));display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 10px 9px 18px;background:rgba(242,237,227,.74);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);border-radius:999px;transition:transform .6s var(--ease)}
 nav.hide{transform:translate(-50%,-150%)}
 .logo{display:flex;align-items:center;gap:11px;font:600 17px var(--sans);letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
-.logo .mk{position:relative;width:28px;height:28px;border-radius:50%;background:var(--ink)}
-.logo .mk::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--verm);animation:orb 3.2s linear infinite}
-@keyframes orb{from{transform:rotate(0) translateX(8px)}to{transform:rotate(360deg) translateX(8px)}}
+.logo .mk{display:block;width:32px;height:32px;transition:transform .6s var(--ease)}
+.logo .mk svg{width:100%;height:100%;display:block}
+.logo:hover .mk{transform:rotate(-12deg) scale(1.08)}}
 .logo em{font:italic 400 21px var(--serif);color:var(--verm);letter-spacing:0}
 .navlinks,nav .links{display:flex;align-items:center;gap:4px}
 .navlinks a.sec{font:500 14px var(--sans);color:var(--ink);text-decoration:none;padding:10px 15px;border-radius:999px;transition:background .25s}
@@ -340,7 +340,7 @@ a.sk{text-decoration:none}
 </div>
 <div id="side" aria-hidden="true">01 &mdash; Intro</div>
 <nav aria-label="Main">
-  <a class="logo" href="#top" aria-label="zohaib-seo home"><span class="mk"></span>zohaib<em>.seo</em></a>
+  <a class="logo" href="#top" aria-label="zohaib-seo home"><span class="mk"><svg class="lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#15130F"/><path d="M31 35H67L31 67H69" fill="none" stroke="#F2EDE3" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="73" cy="27" r="10" fill="#FF4B2B"/></svg></span><span>zohaib<em>.seo</em></span></a>
   <div class="navlinks">
     <a class="sec" href="#approach">Approach</a><a class="sec" href="#experience">Experience</a><a class="sec" href="#skills">Skills</a>
     <div class="dropdown" id="pagesDd"><button type="button" class="dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="ddItems">Pages<span class="left-icon"></span><span class="right-icon"></span></button><div class="items" id="ddItems"><a href="faq.html" style="--i:1"><span></span>FAQ</a><a href="services.html" style="--i:2"><span></span>Services</a><a href="blog.html" style="--i:3"><span></span>Blog</a></div></div>
